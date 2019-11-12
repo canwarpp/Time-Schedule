@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
+import android.util.Log;
 
 public final class Database extends SQLiteOpenHelper {
     // If you change the database schema, you must increment the database version.
@@ -19,15 +20,15 @@ public final class Database extends SQLiteOpenHelper {
     }
 
     /* Inner class that defines the table contents */
-    private static class FeedEntry implements BaseColumns{
-        private static final String TABLE_NAME = "time_schedule";
-        private static final String TITTLE = "tittle";
-        private static final String DAY = "day_of_week";
-        private static final String PLACE = "place";
-        private static final String START_TIME = "start_time";
-        private static final String END_TIME = "end_time";
-        private static final String COLOR = "color";
-        private static final String INFO = "info";
+    public static class FeedEntry implements BaseColumns{
+        public static final String TABLE_NAME = "time_schedule";
+        public static final String TITTLE = "tittle";
+        public static final String DAY = "day_of_week";
+        public static final String ROOM = "room";
+        public static final String START_TIME = "start_time";
+        public static final String END_TIME = "end_time";
+        public static final String COLOR = "color";
+        public static final String INFO = "info";
     }
 
     private static final String SQL_CREATE_ENTRIES =
