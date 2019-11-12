@@ -2,4 +2,13 @@
     <string name="app_name">Time Schedule</string>
     <string name="action_settings">Settings</string>
     <string name="action_add">Add</string>
+    <string name="title_activity_add_schedule">Add Schedule</string>
+    <string name="et_tittle">Tittle</string>
+    <string name="tv_start">Start: </string>
+    <string name="tv_end">End: </string>
+    <string name="et_room">Room</string>
+    <string name="et_info">Info</string>
+    <string name="btn_time_end">10:30</string>
+    <string name="btn_time_start">09:30</string>
+    <string name="btn_save">Save</string>
 </resources>

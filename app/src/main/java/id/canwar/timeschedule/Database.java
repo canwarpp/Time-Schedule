@@ -10,23 +10,23 @@ public final class Database extends SQLiteOpenHelper {
     // Referensi
     // https://www.sqlite.org/lang_datefunc.html
     // https://developer.android.com/training/data-storage/sqlite
-    public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "db_schedule";
+    private static final String DATABASE_NAME = "db_schedule.db";
+    private static final int DATABASE_VERSION = 1;
 
     public Database(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     /* Inner class that defines the table contents */
-    public static class FeedEntry implements BaseColumns{
-        public static final String TABLE_NAME = "time_schedule";
-        public static final String TITTLE = "tittle";
-        public static final String DAY = "day_of_week";
-        public static final String PLACE = "place";
-        public static final String START_TIME = "start_time";
-        public static final String END_TIME = "end_time";
-        public static final String COLOR = "color";
-        public static final String INFO = "info";
+    private static class FeedEntry implements BaseColumns{
+        private static final String TABLE_NAME = "time_schedule";
+        private static final String TITTLE = "tittle";
+        private static final String DAY = "day_of_week";
+        private static final String PLACE = "place";
+        private static final String START_TIME = "start_time";
+        private static final String END_TIME = "end_time";
+        private static final String COLOR = "color";
+        private static final String INFO = "info";
     }
 
     private static final String SQL_CREATE_ENTRIES =
