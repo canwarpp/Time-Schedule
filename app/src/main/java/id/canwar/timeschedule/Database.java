@@ -21,14 +21,14 @@ public final class Database extends SQLiteOpenHelper {
 
     /* Inner class that defines the table contents */
     public static class FeedEntry implements BaseColumns{
-        public static final String TABLE_NAME = "time_schedule";
-        public static final String TITTLE = "tittle";
-        public static final String DAY = "day_of_week";
-        public static final String ROOM = "room";
-        public static final String START_TIME = "start_time";
-        public static final String END_TIME = "end_time";
-        public static final String COLOR = "color";
-        public static final String INFO = "info";
+        private static final String TABLE_NAME = "time_schedule";
+        private static final String TITTLE = "tittle";
+        private static final String DAY = "day_of_week";
+        private static final String ROOM = "room";
+        private static final String START_TIME = "start_time";
+        private static final String END_TIME = "end_time";
+        private static final String COLOR = "color";
+        private static final String INFO = "info";
     }
 
     private static final String SQL_CREATE_ENTRIES =
