@@ -1,5 +1,6 @@
 package id.canwar.timeschedule;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -34,7 +35,7 @@ public final class Database extends SQLiteOpenHelper {
             + FeedEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + FeedEntry.TITTLE + " TEXT,"
             + FeedEntry.DAY + " INT,"
-            + FeedEntry.PLACE + " TEXT,"
+            + FeedEntry.ROOM + " TEXT,"
             + FeedEntry.START_TIME + " TEXT,"
             + FeedEntry.END_TIME + " TEXT,"
             + FeedEntry.COLOR + " TEXT,"
@@ -50,6 +51,24 @@ public final class Database extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+    }
+
+    public long addSchedule(Context context, String tittle, String timeStart, String timeEnd, String info){
+
+        Database database = new Database(context);
+        SQLiteDatabase db = database.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(Database.FeedEntry.TITTLE, tittle);
+        values.put(Database.FeedEntry.DAY, "1");
+        values.put(Database.FeedEntry.START_TIME, timeStart);
+        values.put(Database.FeedEntry.END_TIME, timeEnd);
+        values.put(Database.FeedEntry.COLOR, "#ffffff");
+        values.put(Database.FeedEntry.INFO, info);
+
+        long newRowId = db.insert(Database.FeedEntry.TABLE_NAME, null, values);
+
+        return newRowId;
     }
 
 }
